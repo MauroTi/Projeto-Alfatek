@@ -1,8 +1,15 @@
+<?php 
+if (isset($_GET['msg'])) {
+	echo '<h2>'. $_GET['msg'] . '</h2>';
+	error_reporting(0);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Atualização de Veículos</title>
+	<title>Pedidos de peças</title>
 </head>
 <style type="text/css">
 	.container
@@ -38,59 +45,46 @@
 		text-align: center;
 		text-align-last: center;
 	}
+	#botoes
+	{
+		width: 40%;
+		height: 40px;
+		margin: 0px auto;
+	}
+	.botoes_footer
+	{
+		width: 23%;
+
+	}
+	a:link
+	{
+		text-decoration: none;
+	}
+
 
 </style>
 <body>
 	<div class="container">
 		<div class="centro">			
-			<h1>Atualização de Veículos</h1>
-			<form>
+			<h1>Pedidos de peças</h1>
+			<form action="atualiza.php">
 				<table border="8" class="centro">
+					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 					<tr>
-						<th>Marca</th>
-						<td><input type="text" name="marca"></td>
+						<th>Código</th>
+						<td><input type="text" name="Codigo" value="<?php echo $_GET['Codigo']; ?>"></td>
 					</tr>
 					<tr>
-						<th>Modelo</th>
-						<td><input type="text" name="modelo"></td>
+						<th>Nome da Peça</th>
+						<td><input type="text" name="Nome da peca" value="<?php echo $_GET['Nome da peca']; ?>"></td>
 					</tr>
 					<tr>
-						<th>Cor</th>
-						<td><input type="text" name="cor"></td>
+						<th>Modelo do Equipamento</th>
+						<td><input type="text" name="Modelo" value="<?php echo $_GET['Modelo']; ?>"></td>
 					</tr>
 					<tr>
-						<th>Ano</th>
-						<td>
-							<select>
-								<option value="ano">Escolha o Ano</option>
-								<?php 
-								$ano_atual = date('Y');
-
-								for ($i=0; $i <= 120; $i++) { 
-									$result = ($ano_atual - $i);
-									echo "<option value='$result'>$result</option>";
-								}
-								?>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<th>Placa</th>
-						<td><input type="text" name="placa" maxlength="7" style="text-transform: uppercase;"></td>
-					</tr>
-					<tr>
-						<th>Renavan</th>
-						<td><input type="text" name="renavan" maxlength="11"></td>
-					</tr>
-					<tr>
-						<th>Tipo de Câmbio</th>
-						<td>
-							<select>
-							<option value="cambio">Escolha o Tipo de Câmbio</option>
-							<option>Automático</option>
-							<option>Manual</option>							
-						</select>
-					</td>
+						<th>Quantidade</th>
+						<td><input type="text" name="Quantidade" maxlength="7" style="text-transform: uppercase;" value="<?php echo $_GET['Quantidade']; ?>"></td>
 					</tr>
 					<tr>
 						<td  colspan="2">
@@ -100,6 +94,15 @@
 
 
 				</table>
+				<div class="centro" id="botoes">
+					
+					<tr>
+						<td><button class="botoes_footer" style="border-radius: 10px ;"><a href="index.php" style="color: #000;">Início</a></button></td>
+						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="busca.php" style="color: #000;">Pesquisar</a></button></td>
+						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="busca.php" style="color: #000;">Atualizar</a></button></td>
+					</tr>
+
+				</div>
 
 			</form>
 		</div>

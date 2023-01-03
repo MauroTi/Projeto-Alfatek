@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,14 +39,31 @@
 		text-align: center;
 		text-align-last: center;
 	}
+	#botoes
+	{
+		width: 40%;
+		height: 40px;
+		margin: 0px auto;
+	}
+	.botoes_footer
+	{
+		width: 23%;
+
+	}
+	a:link
+	{
+		text-decoration: none;
+	}
+
 
 </style>
 <body>
 	<div class="container">
 		<div class="centro">			
 			<h1>Busca de Veículos</h1>
-			<form>
+			<form action="pesquisa.php">
 				<table border="8" class="centro">
+					
 					<tr>
 						<th>Marca</th>
 						<td><input type="text" name="marca"></td>
@@ -61,8 +79,8 @@
 					<tr>
 						<th>Ano</th>
 						<td>
-							<select>
-								<option value="ano">Escolha o Ano</option>
+							<select name="ano">
+								<option value="">Escolha o Ano</option>
 								<?php 
 								$ano_atual = date('Y');
 
@@ -85,8 +103,8 @@
 					<tr>
 						<th>Tipo de Câmbio</th>
 						<td>
-							<select>
-							<option value="cambio">Escolha o Tipo de Câmbio</option>
+							<select name="cambio">
+							<option value="">Escolha o Tipo de Câmbio</option>
 							<option>Automático</option>
 							<option>Manual</option>							
 						</select>
@@ -97,10 +115,16 @@
 							<button>Pesquisar</button>
 						</td>
 					</tr>
-
-
 				</table>
+				<div class="centro" id="botoes">
+					
+					<tr>
+						<td><button class="botoes_footer" style="border-radius: 10px ;"><a href="index.php" style="color: #000;">Início</a></button></td>
+						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="cadastrar.php" style="color: #000;">Cadastrar</a></button></td>
+						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="busca.php" style="color: #000;">Atualizar</a></button></td>
+					</tr>
 
+				</div>
 			</form>
 		</div>
 	</div>
