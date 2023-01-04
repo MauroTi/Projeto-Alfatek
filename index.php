@@ -40,14 +40,14 @@
 	</style>
 </head>
 <body>
-	<h1>Operação do Cadastro de Veículos</h1>
+	<h1>Espera de peças</h1>
 	<div id="container">
 
 		<h2>Escolha uma Opção:</h2>
 		<div id="indice">
-			<button><a href="cadastrar.php" class="button" style="color: #000">Cadastrar</a></button>
-			<button><a href="busca.php"  class="button"  style="color: #000">Pesquisar</a></button>
-			<button><a href="busca.php"  class="button"  style="color: #000">Atualizar</a></button>
+			<button><a href="cadastro_estoque.php" class="button" style="color: #000">Cadastrar Estoque</a></button>
+			<button><a href="cadastro_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
+			<button><a href="lista.php"  class="button"  style="color: #000">Listagem</a></button>
 		</div>
 	</div>
 </body>
