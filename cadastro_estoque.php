@@ -18,12 +18,15 @@
 <?php
 // conecta ao banco de dados
 //$conn = mysqli_connect('localhost', '', '', 'pecas');
- $link = mysqli_connect('127.0.0.1','root','','pecas');
-    mysqli_set_charset($link, 'utf8');
+$link = mysqli_connect('127.0.0.1','root','','pecas');
+mysqli_set_charset($link, 'utf8');
+
+    // constrói a consulta SQL de inserção
+$sql = "INSERT INTO pecas (nome, codigo, quantidade,os) VALUES ('$nome', '$codigo', '$quantidade', '$os')";
 
    /* if(!$link){
       // Matando o script e imprimindo o erro
-      die('Erro: '.mysqli_connect_error());*/
+    die('Erro: '.mysqli_connect_error());*/
 
 // verifica se o formulário foi enviado
 /*if (isset($_POST['nome']) && isset($_POST['codigo']) && isset($_POST['quantidade']) && isset($_POST['os'])) {
@@ -33,8 +36,7 @@
   $quantidade = $_POST['quantidade'];
   $os = $_POST['os'];
 
-  // constrói a consulta SQL de inserção
- // $sql = "INSERT INTO pecas (nome, codigo, quantidade) VALUES ('$nome', '$codigo', $quantidade)";
+  
 
   // executa a consulta
  // mysqli_query($conn, $sql);

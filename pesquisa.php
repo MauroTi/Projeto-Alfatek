@@ -53,15 +53,12 @@
 
 	if(isset($_GET)) {
 		
-		$marca = $_GET['marca'];
-		$modelo = $_GET['modelo'];
-		$cor = $_GET['cor'];
-		$ano = $_GET['ano'];
-		$placa = $_GET['placa'];
-		$renavan = $_GET['renavan'];
-		$cambio = $_GET['cambio'];
+		$nome = $_GET['nome'];
+		$codigo = $_GET['codigo'];
+		$quantidade = $_GET['quantidade'];
+		$os = $_GET['os'];
 
-		$query = "SELECT * FROM carros WHERE  marca LIKE '%".$marca."%' AND modelo LIKE '%".$modelo."%' AND cor LIKE '%".$cor."%' AND ano LIKE '%".$ano."%' AND placa LIKE '%".$placa."%'AND renavan LIKE '%".$renavan."%' AND cambio LIKE '%".$cambio."%'";
+		$query = "SELECT * FROM pecas WHERE  nome LIKE '%".$nome."%' AND codigo LIKE '%".$codigo."%'AND quantidade LIKE '%".$quantidade."%' AND os LIKE '%".$os."%'";
 		$resultado = mysqli_query(conecta(), $query);
 
 		$linhas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
@@ -97,14 +94,10 @@
 			<?php
 			foreach($linhas as $linha) {
 				echo '<tr>';
-				echo '<td>'.$linha['id'].'</td>';
-				echo '<td>'.$linha['marca'].'</td>';
-				echo '<td>'.$linha['modelo'].'</td>';
-				echo '<td>'.$linha['cor'].'</td>';
-				echo '<td>'.$linha['ano'].'</td>';
-				echo '<td>'.$linha['placa'].'</td>';
-				echo '<td>'.$linha['renavan'].'</td>';
-				echo '<td>'.$linha['cambio'].'</td>';
+				echo '<td>'.$linha['nome'].'</td>';
+				echo '<td>'.$linha['codigo'].'</td>';
+				echo '<td>'.$linha['quantidade'].'</td>';
+				echo '<td>'.$linha['os'].'</td>';
 				echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
 				echo '<td>
 				<a href="atualizar.php?id='.$linha['id'].'& marca='.$linha['marca'].'& modelo='.$linha['modelo'].'& cor='.$linha['cor'].'& ano='.$linha['ano'].'& placa='.$linha['placa'].'& renavan='.$linha['renavan'].'& cambio='.$linha['cambio'].'">Editar.</a>

@@ -19,12 +19,12 @@
     $link = mysqli_connect('127.0.0.1','root','','pecas');
     mysqli_set_charset($link, 'utf8');
 
-    if(!$link){
+   /* if(!$link){
       // Matando o script e imprimindo o erro
       die('Erro: '.mysqli_connect_error());
- //   }
+ //   }*/
 
-    return $link;
+    /*return $link;
 
 // verifica se o formulário foi enviado
 if (isset($_POST['nome']) && isset($_POST['codigo']) && isset($_POST['quantidade'])) {
@@ -38,5 +38,5 @@ if (isset($_POST['nome']) && isset($_POST['codigo']) && isset($_POST['quantidade
 
   // executa a consulta
   mysqli_query($link, $sql);
-}
+}*/
 ?>
