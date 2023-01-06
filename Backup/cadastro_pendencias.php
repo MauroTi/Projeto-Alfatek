@@ -13,11 +13,12 @@
 </form>
 
 <?php
+include('funcoes/conecta.php');
 // conecta ao banco de dados
 //$conn = mysqli_connect('localhost', 'username', 'password', 'database_name');
 //function conecta(){
-    $link = mysqli_connect('127.0.0.1','root','','pecas');
-    mysqli_set_charset($link, 'utf8');
+  //  $link = mysqli_connect('127.0.0.1','root','','pecas');
+  //  mysqli_set_charset($link, 'utf8');
 
    /* if(!$link){
       // Matando o script e imprimindo o erro

@@ -72,7 +72,7 @@ if (isset($_GET['msg'])) {
 					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 					<tr>
 						<th>Código da  Peça</th>
-						<td><input type="text" name="Codigo da peca" value="<?php echo $_GET['Codigo da peca']; ?>"></td>
+						<td><input type="text" name="Codigo da peca" value="<?php echo $_GET['codigo']; ?>"></td>
 					</tr>
 					<tr>
 						<th>Nome da Peça</th>
@@ -88,7 +88,7 @@ if (isset($_GET['msg'])) {
 					</tr>
 					<tr>
 						<th>Ordem de Serviço</th>
-						<td><input type="text" name="O.S." maxlength="6" style="text-transform: uppercase;" value="<?php echo $_GET['O.S.']; ?>"></td>
+						<td><input type="text" name="O.S." maxlength="6" style="text-transform: uppercase;" value="<?php echo $_GET['os']; ?>"></td>
 					</tr>
 					<tr>
 						<td  colspan="2">

@@ -79,14 +79,10 @@
 		if(isset($linhas)) {
 			?>
 			<tr>
-				<th>Id</th>
-				<th>Marca</th>
-				<th>Modelo</th>
-				<th>Cor</th>
-				<th>Ano</th>
-				<th>Placa</th>
-				<th>Renavan</th>
-				<th>Cambio</th>
+				<th>Nome</th>
+				<th>Código</th>
+				<th>Quantidade</th>
+				<th>Ordem de Serviço</th>
 				<th>Deletar</th>
 				<th>Atualizar</th>
 				
@@ -100,7 +96,7 @@
 				echo '<td>'.$linha['os'].'</td>';
 				echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
 				echo '<td>
-				<a href="atualizar.php?id='.$linha['id'].'& marca='.$linha['marca'].'& modelo='.$linha['modelo'].'& cor='.$linha['cor'].'& ano='.$linha['ano'].'& placa='.$linha['placa'].'& renavan='.$linha['renavan'].'& cambio='.$linha['cambio'].'">Editar.</a>
+				<a href="atualizar.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'& os='.$linha['os'].'">Editar.</a>
 
 				</td>';
 				echo '</tr>';

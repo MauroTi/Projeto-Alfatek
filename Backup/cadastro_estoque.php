@@ -16,14 +16,19 @@
 </form>
 
 <?php
+include('funcoes/conecta.php');
 // conecta ao banco de dados
 //$conn = mysqli_connect('localhost', '', '', 'pecas');
-$link = mysqli_connect('127.0.0.1','root','','pecas');
-mysqli_set_charset($link, 'utf8');
-
+//$link = mysqli_connect('127.0.0.1','root','','pecas');
+//mysqli_set_charset($link, 'utf8');
+if(isset($_GET)) {
     // constrói a consulta SQL de inserção
-$sql = "INSERT INTO pecas (nome, codigo, quantidade,os) VALUES ('$nome', '$codigo', '$quantidade', '$os')";
-
+  $nome = $_GET['nome'];
+  $codigo = $_GET['codigo'];
+  $quantidade = $_GET['quantidade'];
+  $os = $_GET['os'];
+  $sql = "INSERT INTO pecas (nome, codigo, quantidade,os) VALUES ('$nome', '$codigo', '$quantidade', '$os')";
+}
    /* if(!$link){
       // Matando o script e imprimindo o erro
     die('Erro: '.mysqli_connect_error());*/

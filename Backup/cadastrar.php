@@ -63,7 +63,7 @@ if (isset($_GET['msg'])) {
 <body>
 	<div class="container">
 		<div class="centro">			
-			<h1>Pedidos de peças</h1>
+			<h1>Lista de Pendências</h1>
 			<form action="atualiza.php">
 				<table border="8" class="centro">
 					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
