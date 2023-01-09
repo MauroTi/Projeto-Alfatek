@@ -23,7 +23,7 @@
 		}
 		.botoes_footer
 		{
-			width: 23%;
+			width: auto;
 
 		}
 		a:link
@@ -53,12 +53,13 @@
 
 	if(isset($_GET)) {
 		
+		$id = $_GET['id'];
 		$nome = $_GET['nome'];
 		$codigo = $_GET['codigo'];
 		$quantidade = $_GET['quantidade'];
 		$os = $_GET['os'];
 
-		$query = "SELECT * FROM pecas WHERE  nome LIKE '%".$nome."%' AND codigo LIKE '%".$codigo."%'AND quantidade LIKE '%".$quantidade."%' AND os LIKE '%".$os."%'";
+		$query = "SELECT * FROM pecas WHERE id LIKE '%".$id."%' AND nome LIKE '%".$nome."%' AND codigo LIKE '%".$codigo."%' AND quantidade LIKE '%".$quantidade."%' AND os LIKE '%".$os."%'";
 		$resultado = mysqli_query(conecta(), $query);
 
 		$linhas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
