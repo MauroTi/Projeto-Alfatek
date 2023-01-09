@@ -16,7 +16,7 @@
 		}
 		#botoes
 		{
-			width: 40%;
+			width: auto;
 			height: 40px;
 			margin: 0px auto;
 			margin-bottom: 30px;
@@ -51,19 +51,39 @@
 
 	include('funcoes/conecta.php');
 
-	if(isset($_GET)) {
 		
-		$id = $_GET['id'];
-		$nome = $_GET['nome'];
-		$codigo = $_GET['codigo'];
-		$quantidade = $_GET['quantidade'];
-		$os = $_GET['os'];
+		if (isset($_GET['id'])) {
+			$id = $_GET['id'];
+		} else {
+			$id = '';
+		}
+		if (isset($_GET['nome'])) {
+			$nome = $_GET['nome'];
+		} else {
+			$nome = '';
+		}
+		if (isset($_GET['codigo'])) {
+			$codigo = $_GET['codigo'];
+		} else {
+			$codigo = '';
+		}
+		if (isset($_GET['quantidade'])) {
+			$quantidade = $_GET['quantidade'];
+		} else {
+			$quantidade = '';
+		}
+		if (isset($_GET['os'])) {
+			$os = $_GET['os'];
+		} else {
+			$os = '';
+		}
 
-		$query = "SELECT * FROM pecas WHERE id LIKE '%".$id."%' AND nome LIKE '%".$nome."%' AND codigo LIKE '%".$codigo."%' AND quantidade LIKE '%".$quantidade."%' AND os LIKE '%".$os."%'";
+		$query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND os LIKE '%$os%'";
+
 		$resultado = mysqli_query(conecta(), $query);
 
 		$linhas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-	}
+	
 	?>
 
 	<div class="centro" id="botoes">
@@ -92,6 +112,7 @@
 			</tr>
 			<?php
 			foreach($linhas as $linha) {
+
 				echo '<tr>';
 				echo '<td>'.$linha['nome'].'</td>';
 				echo '<td>'.$linha['codigo'].'</td>';
@@ -117,5 +138,6 @@
 			}
 		}
 	</script>
+
 </body>
 </html>

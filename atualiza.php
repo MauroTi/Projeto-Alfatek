@@ -17,9 +17,6 @@
 	
 
 
-
-
-
 	if($resultado){
 		header('Location: atualizar.php?msg=Cadastro atualizado!');
 	}

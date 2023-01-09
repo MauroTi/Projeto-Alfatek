@@ -9,7 +9,7 @@ $termo = $_GET['pecas'];
 $termo_escaped = mysqli_real_escape_string($conn, $termo);
 
 // constrói a consulta SQL
-$sql = "SELECT * FROM pecas WHERE nome LIKE '%$nome%' OR codigo LIKE '%$codigo%' OR quantidade LIKE '%$quantidade%'";
+$sql = "SELECT * FROM pecas WHERE nome LIKE '%$nome%' OR codigo LIKE '%$codigo%' OR quantidade LIKE '%$quantidade%' OR os LIKE '%$os%'";
 
 // executa a consulta
 $result = mysqli_query($conn, $sql);
@@ -24,4 +24,5 @@ if (mysqli_num_rows($result) > 0) {
     echo 'Nome: ' . $row['nome'] . '<br>';
     echo 'Código: ' . $row['codigo'] . '<br>';
     echo 'Quantidade: ' . $row['quantidade'] . '<br>';
+    echo 'Os: ' . $row['os'] . '<br>';
 }}

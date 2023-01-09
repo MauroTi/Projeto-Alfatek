@@ -6,7 +6,7 @@
 
 		if(!$link){
 			// Matando o script e imprimindo o erro
-			die('Erro: '.mysqli_connect_error());
+			die('Erro: 'mysqli_connect_error());
 		}
 
 		return $link;

@@ -45,7 +45,7 @@ if (isset($_GET['msg'])) {
 	}
 	#botoes
 	{
-		width: 70%;
+		width: 90%;
 		height: 40px;
 		margin: 0px auto;
 	}
@@ -64,25 +64,55 @@ if (isset($_GET['msg'])) {
 	<div class="container">
 		<div class="centro">			
 			<h1>Cadastro de Pendências</h1>
-			<form action="insert.php">
+			<form action="insert.php" method="post" autocomplete="off">
 				<table border="8" class="centro">
-					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+					<?php 
+					if (isset($_GET['id'])) {
+						$id = $_GET['id'];
+					} else {
+						$id = '';
+					}
+					if (isset($_GET['nome'])) {
+						$nome = $_GET['nome'];
+					} else {
+						$nome = '';
+					}
+					if (isset($_GET['codigo'])) {
+						$codigo = $_GET['codigo'];
+					} else {
+						$codigo = '';
+					}
+					if (isset($_GET['quantidade'])) {
+						$quantidade = $_GET['quantidade'];
+					} else {
+						$quantidade = '';
+					}
+					if (isset($_GET['os'])) {
+						$os = $_GET['os'];
+					} else {
+						$os = '';
+					}
+					?>
+
+					<input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 					<tr>
 						<th>Código</th>
-						<td><input type="text" name="Codigo" value="<?php echo $_GET['codigo']; ?>"></td>
+						<td><input type="text" name="codigo" maxlength="9" value="<?php echo htmlspecialchars($codigo); ?>"></td>
 					</tr>
 					<tr>
 						<th>Nome da Peça</th>
-						<td><input type="text" name="Nome da peca" value="<?php echo $_GET['nome']; ?>"></td>
+						<td><input type="text" name="nome" value="<?php echo htmlspecialchars($nome); ?>"></td>
 					</tr>
 					<tr>
 						<th>Quantidade</th>
-						<td><input type="text" name="Quantidade" maxlength="3" value="<?php echo $_GET['quantidade']; ?>"></td>
+						<td><input type="text" name="quantidade" maxlength="3" value="<?php echo htmlspecialchars($quantidade); ?>"></td>
 					</tr>
 					<tr>
 						<th>Ordem de Serviço</th>
-						<td><input type="text" name="os" maxlength="6" value="<?php echo $_GET['os']; ?>"></td>
+						<td><input type="text" name="os" maxlength="6" value="<?php echo htmlspecialchars($os); ?>"></td>
 					</tr>
+
+
 					<tr>
 						<td  colspan="2">
 							<button>Cadastrar</button>
@@ -102,5 +132,6 @@ if (isset($_GET['msg'])) {
 			</form>
 		</div>
 	</div>
+
 </body>
 </html>
