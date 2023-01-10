@@ -4,46 +4,8 @@
 <head>
 	<title>Lista de Pendências</title>
 	<meta charset="utf-8">
-	<style type="text/css">
-		.tabela
-		{
-			margin: 0px auto; 
-		}
-		td
-		{
-			padding: 2px 5px;
-			text-align: center;
-		}
-		#botoes
-		{
-			width: auto;
-			height: 40px;
-			margin: 0px auto;
-			margin-bottom: 30px;
-		}
-		.botoes_footer
-		{
-			width: auto;
-
-		}
-		a:link
-		{
-			text-decoration: none;
-		}
-		button
-		{
-			width: 100%;
-			height: 40px;
-			font-size: 15px;
-			font-family: "arial";
-			font-weight: bold;
-		}
-		.centro
-		{
-			text-align: center;
-			margin: 40px auto 40px auto;
-		}
-	</style>
+	<link href="estilo_lista.css" rel="stylesheet">
+	
 </head>
 <body>
 	<?php
@@ -51,42 +13,45 @@
 
 	include('funcoes/conecta.php');
 
-		
-		if (isset($_GET['id'])) {
-			$id = $_GET['id'];
-		} else {
-			$id = '';
-		}
-		if (isset($_GET['nome'])) {
-			$nome = $_GET['nome'];
-		} else {
-			$nome = '';
-		}
-		if (isset($_GET['codigo'])) {
-			$codigo = $_GET['codigo'];
-		} else {
-			$codigo = '';
-		}
-		if (isset($_GET['quantidade'])) {
-			$quantidade = $_GET['quantidade'];
-		} else {
-			$quantidade = '';
-		}
-		if (isset($_GET['os'])) {
-			$os = $_GET['os'];
-		} else {
-			$os = '';
-		}
 
-		$query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND os LIKE '%$os%'";
+	if (isset($_GET['id'])) {
+		$id = $_GET['id'];
+	} else {
+		$id = '';
+	}
+	if (isset($_GET['nome'])) {
+		$nome = $_GET['nome'];
+	} else {
+		$nome = '';
+	}
+	if (isset($_GET['codigo'])) {
+		$codigo = $_GET['codigo'];
+	} else {
+		$codigo = '';
+	}
+	if (isset($_GET['quantidade'])) {
+		$quantidade = $_GET['quantidade'];
+	} else {
+		$quantidade = '';
+	}
+	if (isset($_GET['os'])) {
+		$os = $_GET['os'];
+	} else {
+		$os = '';
+	}
 
-		$resultado = mysqli_query(conecta(), $query);
+	$query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND os LIKE '%$os%'";
 
-		$linhas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+	$resultado = mysqli_query(conecta(), $query);
+
+	$linhas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 	
 	?>
-
-	<div class="centro" id="botoes">
+	<div class="centro tabela-container">
+		<h1>Lista de Pendências</h1>
+	</div>
+	
+	<div class="centro tabela-container" id="botoes">
 
 		<tr>
 			<td><button class="botoes_footer" style="border-radius: 10px ;"><a href="index.php" style="color: #000;">Início</a></button></td>
@@ -97,7 +62,7 @@
 		</tr>
 
 	</div>
-	<table class="tabela" border="1">
+	<table class="tabela tabela-container" border="1">
 		<?php
 		if(isset($linhas)) {
 			?>

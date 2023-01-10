@@ -9,101 +9,73 @@ if (isset($_GET['msg'])) {
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Pedidos de peças</title>
+	<title>Atualizar Pedido de Peças</title>
+	<link href="estilo_cadastro.css" rel="stylesheet">
 </head>
-<style type="text/css">
-	.container
-	{
-		font-family: "tahoma";
-		margin: 0px;
-		padding: 0px;
-	}
-	.centro
-	{
-		text-align: center;
-		margin: 40px auto 40px auto;
-	}
-	table, tr, td, th
-	{
-		border-radius: 6px;
-		height: 40px;
-	}
 
-	button
-	{
-		width: 100%;
-		height: 40px;
-		font-size: 20px;
-		font-family: "arial";
-		font-weight: bold;
-	}
-	input, select
-	{
-		width: 99%;
-		height: 100%;
-		font-size: 16px;
-		text-align: center;
-		text-align-last: center;
-	}
-	#botoes
-	{
-		width: 40%;
-		height: 40px;
-		margin: 0px auto;
-	}
-	.botoes_footer
-	{
-		width: 23%;
-
-	}
-	a:link
-	{
-		text-decoration: none;
-	}
-
-
-</style>
 <body>
 	<div class="container">
 		<div class="centro">			
 			<h1>Pedidos de peças</h1>
 			<form action="atualiza.php">
 				<table border="8" class="centro">
-					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+					<?php 
+					if (isset($_GET['id'])) {
+						$id = $_GET['id'];
+					} else {
+						$id = '';
+					}
+					if (isset($_GET['nome'])) {
+						$nome = $_GET['nome'];
+					} else {
+						$nome = '';
+					}
+					if (isset($_GET['codigo'])) {
+						$codigo = $_GET['codigo'];
+					} else {
+						$codigo = '';
+					}
+					if (isset($_GET['quantidade'])) {
+						$quantidade = $_GET['quantidade'];
+					} else {
+						$quantidade = '';
+					}
+					if (isset($_GET['os'])) {
+						$os = $_GET['os'];
+					} else {
+						$os = '';
+					}
+					?>
+
+					<input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 					<tr>
-						<th>Código da  Peça</th>
-						<td><input type="text" name="Codigo da peca" value="<?php echo $_GET['codigo']; ?>"></td>
+						<th>Código</th>
+						<td><input type="text" name="codigo" maxlength="9" value="<?php echo htmlspecialchars($codigo); ?>"></td>
 					</tr>
 					<tr>
 						<th>Nome da Peça</th>
-						<td><input type="text" name="Nome da peca" value="<?php echo $_GET['nome']; ?>"></td>
+						<td><input type="text" name="nome" value="<?php echo htmlspecialchars($nome); ?>"></td>
 					</tr>
 					<tr>
 						<th>Quantidade</th>
-						<td><input type="text" name="Quantidade" maxlength="7" style="text-transform: uppercase;" value="<?php echo $_GET['quantidade']; ?>"></td>
+						<td><input type="text" name="quantidade" maxlength="3" value="<?php echo htmlspecialchars($quantidade); ?>"></td>
 					</tr>
 					<tr>
 						<th>Ordem de Serviço</th>
-						<td><input type="text" name="O.S." maxlength="6" style="text-transform: uppercase;" value="<?php echo $_GET['os']; ?>"></td>
+						<td><input type="text" name="os" maxlength="6" value="<?php echo htmlspecialchars($os); ?>"></td>
 					</tr>
+
+
 					<tr>
 						<td  colspan="2">
 							<button>Atualizar</button>
 						</td>
 					</tr>
-
-
 				</table>
-				<div class="centro" id="botoes">
-					
-					<tr>
-						<td><button class="botoes_footer" style="border-radius: 10px ;"><a href="index.php" style="color: #000;">Início</a></button></td>
-						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="busca.php" style="color: #000;">Pesquisar</a></button></td>
-						<td><button class="botoes_footer" style="border-radius: 10px;"><a href="busca.php" style="color: #000;">Atualizar</a></button></td>
-					</tr>
+				<?php 
 
-				</div>
-
+	include 'botoes.php';
+?>
 			</form>
 		</div>
 	</div>
