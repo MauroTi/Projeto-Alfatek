@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pesquisa</title>
+	<title>Lista de Pendências</title>
 	<meta charset="utf-8">
 	<style type="text/css">
 		.tabela
