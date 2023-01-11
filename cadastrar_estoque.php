@@ -55,7 +55,7 @@ if (isset($_GET['msg'])) {
                         <td><input type="text" name="nome" value="<?php echo htmlspecialchars($nome); ?>"></td>
                     </tr>
                     <tr>
-                        <th>Quantidade</th>
+                        <th> Quantidade </th>
                         <td><input type="text" name="quantidade" maxlength="3" value="<?php echo htmlspecialchars($quantidade); ?>"></td>
                     </tr>
                     <tr>
