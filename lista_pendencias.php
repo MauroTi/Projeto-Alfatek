@@ -14,33 +14,14 @@
 	include('funcoes/conecta.php');
 
 
-	if (isset($_GET['id'])) {
-		$id = $_GET['id'];
-	} else {
-		$id = '';
-	}
-	if (isset($_GET['nome'])) {
-		$nome = $_GET['nome'];
-	} else {
-		$nome = '';
-	}
-	if (isset($_GET['codigo'])) {
-		$codigo = $_GET['codigo'];
-	} else {
-		$codigo = '';
-	}
-	if (isset($_GET['quantidade'])) {
-		$quantidade = $_GET['quantidade'];
-	} else {
-		$quantidade = '';
-	}
-	if (isset($_GET['os'])) {
-		$os = $_GET['os'];
-	} else {
-		$os = '';
-	}
+	$id = isset($_POST['id']) ? $_POST['id'] : '';
+	$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
+	$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
+	$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
+	$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
 
-	$query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND os LIKE '%$os%'";
+
+	$query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome_pendencias LIKE '%$nome_pendencias%' AND codigo_pendencias LIKE '%$codigo_pendencias%' AND quantidade_pendencias LIKE '%$quantidade_pendencias%' AND os_pendencias LIKE '%$os_pendencias%'";
 
 	$resultado = mysqli_query(conecta(), $query);
 
@@ -53,9 +34,9 @@
 	
 	<div class="centro tabela-container" id="botoes">
 
-		 <?php
-                    include 'botoes.php';
-                    ?>
+		<?php
+		include 'botoes.php';
+		?>
 
 	</div>
 	<table class="tabela tabela-container" border="1">
@@ -74,14 +55,15 @@
 			<?php
 			foreach($linhas as $linha) {
 
+
 				echo '<tr>';
-				echo '<td>'.$linha['nome'].'</td>';
-				echo '<td>'.$linha['codigo'].'</td>';
-				echo '<td>'.$linha['quantidade'].'</td>';
-				echo '<td>'.$linha['os'].'</td>';
+				echo '<td>'.(!empty($linha['nome_pendencias']) ? $linha['nome_pendencias'] : '-').'</td>';
+				echo '<td>'.(!empty($linha['codigo_pendencias']) ? $linha['codigo_pendencias'] : '-').'</td>';
+				echo '<td>'.(!empty($linha['quantidade_pendencias']) ? $linha['quantidade_pendencias'] : '-').'</td>';
+				echo '<td>'.(!empty($linha['os_pendencias']) ? $linha['os_pendencias'] : '-').'</td>';
 				echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
 				echo '<td>
-				<a href="atualizar.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'& os='.$linha['os'].'">Editar.</a>
+				<a href="atualizar_pendencias.php?id='.$linha['id'].'& nome_pendencias='.$linha['nome_pendencias'].'& codigo_pendencias='.$linha['codigo_pendencias'].'& quantidade_pendencias='.$linha['quantidade_pendencias'].'& os_pendencias='.$linha['os_pendencias'].'">Editar.</a>
 
 				</td>';
 				echo '</tr>';
@@ -95,7 +77,7 @@
 		function excluir(id){
 			del = confirm('Deseja excluir o registro '+id+'?');
 			if(del == true){
-				window.location.href = 'delete.php?id='+id;
+				window.location.href = 'delete_pendencias.php?id='+id;
 			}
 		}
 	</script>

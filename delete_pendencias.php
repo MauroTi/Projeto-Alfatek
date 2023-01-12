@@ -10,7 +10,7 @@
 	$resultado = mysqli_query(conecta(), $query);
 
 	if($resultado){
-		header('Location: pesquisa.php?msg=Cadastro excluído!&id=&codigo=&modelo=&quantidade=&os');
+		header('Location: lista_pendencias.php?msg=Cadastro excluído!&id=&codigo=&modelo=&quantidade=&os');
 
 
 	}

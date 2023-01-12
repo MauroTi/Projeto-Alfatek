@@ -15,35 +15,36 @@ if (isset($_GET['msg'])) {
     <div class="container">
         <div class="centro">            
             <h1>Cadastro de Estoque</h1>
-            <form action="insert.php" method="post" autocomplete="off">
+            <form action="insert_estoque.php" method="post" autocomplete="off">
                 <table border="8" class="centro">
                     <?php 
-                    if (isset($_GET['id'])) {
-                        $id = $_GET['id'];
+                    if (isset($_POST['id'])) {
+                        $id = $_POST['id'];
                     } else {
                         $id = '';
                     }
-                    if (isset($_GET['nome'])) {
-                        $nome = $_GET['nome'];
+                    if (isset($_POST['nome'])) {
+                        $nome = $_POST['nome'];
                     } else {
                         $nome = '';
                     }
-                    if (isset($_GET['codigo'])) {
-                        $codigo = $_GET['codigo'];
+                    if (isset($_POST['codigo'])) {
+                        $codigo = $_POST['codigo'];
                     } else {
                         $codigo = '';
                     }
-                    if (isset($_GET['quantidade'])) {
-                        $quantidade = $_GET['quantidade'];
+                    if (isset($_POST['quantidade'])) {
+                        $quantidade = $_POST['quantidade'];
                     } else {
                         $quantidade = '';
                     }
-                    if (isset($_GET['os'])) {
-                        $os = $_GET['os'];
+                    if (isset($_POST['os'])) {
+                        $os = $_POST['os'];
                     } else {
                         $os = '';
                     }
                     ?>
+
 
                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                     <tr>

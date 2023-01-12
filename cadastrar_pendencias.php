@@ -14,52 +14,35 @@ if (isset($_GET['msg'])) {
 	<div class="container">
 		<div class="centro">			
 			<h1>Cadastro de Pendências</h1>
-			<form action="insert.php" method="post" autocomplete="off">
+			<form action="insert_pendencias.php" method="post" autocomplete="off">
 				<table border="8" class="centro">
 					<?php 
-					if (isset($_GET['id'])) {
-						$id = $_GET['id'];
-					} else {
-						$id = '';
-					}
-					if (isset($_GET['nome'])) {
-						$nome = $_GET['nome'];
-					} else {
-						$nome = '';
-					}
-					if (isset($_GET['codigo'])) {
-						$codigo = $_GET['codigo'];
-					} else {
-						$codigo = '';
-					}
-					if (isset($_GET['quantidade'])) {
-						$quantidade = $_GET['quantidade'];
-					} else {
-						$quantidade = '';
-					}
-					if (isset($_GET['os'])) {
-						$os = $_GET['os'];
-					} else {
-						$os = '';
-					}
+					$id = $nome_pendencias = $codigo_pendencias = $quantidade_pendencias = $os_pendencias = "";
+
+$id = isset($_POST['id']) ? $_POST['id'] : '';
+$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
+$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
+$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
+$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
+
 					?>
 
 					<input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
 					<tr>
 						<th>Código</th>
-						<td><input type="text" name="codigo" maxlength="9" value="<?php echo htmlspecialchars($codigo); ?>"></td>
+						<td><input type="text" name="codigo_pendencias" maxlength="9" value="<?php echo htmlspecialchars($codigo_pendencias); ?>"></td>
 					</tr>
 					<tr>
 						<th>Nome da Peça</th>
-						<td><input type="text" name="nome" value="<?php echo htmlspecialchars($nome); ?>"></td>
+						<td><input type="text" name="nome_pendencias" value="<?php echo htmlspecialchars($nome_pendencias); ?>"></td>
 					</tr>
 					<tr>
 						<th>Quantidade</th>
-						<td><input type="text" name="quantidade" maxlength="3" value="<?php echo htmlspecialchars($quantidade); ?>"></td>
+						<td><input type="text" name="quantidade_pendencias" maxlength="3" value="<?php echo htmlspecialchars($quantidade_pendencias); ?>"></td>
 					</tr>
 					<tr>
 						<th>Ordem de Serviço</th>
-						<td><input type="text" name="os" maxlength="6" value="<?php echo htmlspecialchars($os); ?>"></td>
+						<td><input type="text" name="os_pendencias" maxlength="6" value="<?php echo htmlspecialchars($os_pendencias); ?>"></td>
 					</tr>
 
 

@@ -13,26 +13,11 @@
   include('funcoes/conecta.php');
 
   
-  if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-  } else {
-    $id = '';
-  }
-  if (isset($_GET['nome'])) {
-    $nome = $_GET['nome'];
-  } else {
-    $nome = '';
-  }
-  if (isset($_GET['codigo'])) {
-    $codigo = $_GET['codigo'];
-  } else {
-    $codigo = '';
-  }
-  if (isset($_GET['quantidade'])) {
-    $quantidade = $_GET['quantidade'];
-  } else {
-    $quantidade = '';
-  }
+  $id = isset($_POST['id']) ? $_POST['id'] : '';
+  $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+  $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
+  $quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : '';
+
 
 
   $query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%'";
@@ -43,54 +28,58 @@
   
   ?>
   <div class="centro tabela-container">
-    <h1>Lista de Pendências</h1>
+    <h1>Lista de Estoque</h1>
   </div>
   <div class="centro tabela-container" id="botoes">
 
-     <?php
-                    include 'botoes.php';
-                    ?>
+   <?php
+   include 'botoes.php';
+   ?>
 
-  </div>
-  <table class="tabela tabela-container" border="1">
-    <?php
-    if(isset($linhas)) {
-      ?>
-      <tr>
-        <th>Nome</th>
-        <th>Código</th>
-        <th>Quantidade</th>
-        <th>Deletar</th>
-        <th>Atualizar</th>
-        
-      </tr>
-      <?php
-      foreach($linhas as $linha) {
-
-        echo '<tr>';
-        echo '<td>'.$linha['nome'].'</td>';
-        echo '<td>'.$linha['codigo'].'</td>';
-        echo '<td>'.$linha['quantidade'].'</td>';
-        echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
-        echo '<td>
-        <a href="atualizar.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'">Editar.</a>
-
-        </td>';
-        echo '</tr>';
-      }
-    }
+ </div>
+ <table class="tabela tabela-container" border="1">
+  <?php
+  if(isset($linhas)) {
     ?>
-  </table>
-  
-  
-  <script type="text/javascript">
-    function excluir(id){
-      del = confirm('Deseja excluir o registro '+id+'?');
-      if(del == true){
-        window.location.href = 'delete.php?id='+id;
+    <tr>
+      <th>Nome</th>
+      <th>Código</th>
+      <th>Quantidade</th>
+      <th>Deletar</th>
+      <th>Atualizar</th>
+
+    </tr>
+    <?php
+    foreach($linhas as $linha) {
+      if(empty($linha['nome'])){
+        break;
       }
+
+      echo '<tr>';
+      echo '<td>'.(!empty($linha['nome']) ? $linha['nome'] : '-').'</td>';
+      echo '<td>'.(!empty($linha['codigo']) ? $linha['codigo'] : '-').'</td>';
+      echo '<td>'.(!empty($linha['quantidade']) ? $linha['quantidade'] : '-').'</td>';
+      echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
+      echo '<td>
+      <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'">Editar.</a>
+
+      </td>';
+
+      echo '</tr>';
     }
-  </script>
+  }
+  ?>
+</table>
+
+
+<script type="text/javascript">
+  function excluir(id){
+    del = confirm('Deseja excluir o registro '+id+'?');
+    if(del == true){
+      window.location.href = 'delete_estoque.php?id='+id;
+    }
+  }
+</script>
 
 </body>
 </html>
