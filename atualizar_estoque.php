@@ -17,34 +17,31 @@ if (isset($_GET['msg'])) {
 	<div class="container">
 		<div class="centro">			
 			<h1>Atualizar Pedido de Peças</h1>
-			<form action="atualiza.php">
+			<form action="atualiza_estoque.php">
 				<table border="8" class="centro">
 					<?php 
-					if (isset($_GET['id'])) {
-						$id = $_GET['id'];
-					} else {
-						$id = '';
-					}
-					if (isset($_GET['nome'])) {
-						$nome = $_GET['nome'];
-					} else {
-						$nome = '';
-					}
-					if (isset($_GET['codigo'])) {
-						$codigo = $_GET['codigo'];
-					} else {
-						$codigo = '';
-					}
-					if (isset($_GET['quantidade'])) {
-						$quantidade = $_GET['quantidade'];
-					} else {
-						$quantidade = '';
-					}
-					if (isset($_GET['os'])) {
-						$os = $_GET['os'];
-					} else {
-						$os = '';
-					}
+					if (isset($_POST['id'])) {
+    $id = $_POST['id'];
+} else {
+    $id = '';
+}
+if (isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
+} else {
+    $nome = '';
+}
+if (isset($_POST['codigo'])) {
+    $codigo = $_POST['codigo'];
+} else {
+    $codigo = '';
+}
+if (isset($_POST['quantidade'])) {
+    $quantidade = $_POST['quantidade'];
+} else {
+    $quantidade = '';
+}
+
+
 					?>
 
 					<input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
@@ -60,11 +57,6 @@ if (isset($_GET['msg'])) {
 						<th>Quantidade</th>
 						<td><input type="text" name="quantidade" maxlength="3" value="<?php echo htmlspecialchars($quantidade); ?>"></td>
 					</tr>
-					<tr>
-						<th>Ordem de Serviço</th>
-						<td><input type="text" name="os" maxlength="6" value="<?php echo htmlspecialchars($os); ?>"></td>
-					</tr>
-
 
 					<tr>
 						<td  colspan="2">
