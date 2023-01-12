@@ -52,8 +52,13 @@
     <?php
     foreach($linhas as $linha) {
       if(empty($linha['nome'])){
+
     continue;
   }
+
+        break;
+      }
+
 
       echo '<tr>';
       echo '<td>'.(!empty($linha['nome']) ? $linha['nome'] : '-').'</td>';
