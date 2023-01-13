@@ -17,7 +17,7 @@ if (isset($_POST['msg'])) {
 	<div class="container">
 		<div class="centro">			
 			<h1>Atualizar Pendências</h1>
-			<form action="atualiza_pendencias.php">
+			<form action="atualiza_pendencias.php" method="post">
 				<table border="8" class="centro">
 					<?php 
 					if (isset($_POST['id'])) {

@@ -51,14 +51,12 @@
     </tr>
     <?php
     foreach($linhas as $linha) {
-      if(empty($linha['nome'])){
+      if(empty($linha['nome'] && $linha['codigo'] && $linha['quantidade'])){
 
     continue;
   }
 
-        break;
-      }
-
+  
 
       echo '<tr>';
       echo '<td>'.(!empty($linha['nome']) ? $linha['nome'] : '-').'</td>';

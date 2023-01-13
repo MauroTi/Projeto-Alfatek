@@ -55,6 +55,10 @@
 			<?php
 			foreach($linhas as $linha) {
 
+				if(empty($linha['nome_pendencias'] && $linha['codigo_pendencias'] && $linha['quantidade_pendencias'])){
+
+					continue;
+				}
 
 				echo '<tr>';
 				echo '<td>'.(!empty($linha['nome_pendencias']) ? $linha['nome_pendencias'] : '-').'</td>';
@@ -62,10 +66,8 @@
 				echo '<td>'.(!empty($linha['quantidade_pendencias']) ? $linha['quantidade_pendencias'] : '-').'</td>';
 				echo '<td>'.(!empty($linha['os_pendencias']) ? $linha['os_pendencias'] : '-').'</td>';
 				echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
-				echo '<td>
-				<a href="atualizar_pendencias.php?id='.$linha['id'].'& nome_pendencias='.$linha['nome_pendencias'].'& codigo_pendencias='.$linha['codigo_pendencias'].'& quantidade_pendencias='.$linha['quantidade_pendencias'].'& os_pendencias='.$linha['os_pendencias'].'">Editar.</a>
+				echo '<td> <a href="atualizar_pendencias.php?id='.$linha['id'].'&nome_pendencias='.$linha['nome_pendencias'].'&codigo_pendencias='.$linha['codigo_pendencias'].'&quantidade_pendencias='.$linha['quantidade_pendencias'].'&os_pendencias='.$linha['os_pendencias'].'">Editar</a> </td>';
 
-				</td>';
 				echo '</tr>';
 			}
 		}
