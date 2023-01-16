@@ -44,7 +44,6 @@
 <body>
 	<h1>Cadastro de Pendências e Peças</h1>
 	<div id="container">
-
 		<h2>Escolha uma Opção:</h2>
 		<div id="indice">
 			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
