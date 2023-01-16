@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Cadastro de Pendências e Estoque</title>
+	<title>Cadastro de Pendências e Peças</title>
 	<style type="text/css">
 		button
 		{
@@ -32,6 +32,8 @@
 		}
 		#indice
 		{
+			width: 50%;
+			margin: 10px auto;
 			text-align: center;
 			
 		}
@@ -40,15 +42,15 @@
 	</style>
 </head>
 <body>
-	<h1>Espera de peças</h1>
+	<h1>Cadastro de Pendências e Peças</h1>
 	<div id="container">
 
 		<h2>Escolha uma Opção:</h2>
 		<div id="indice">
-			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Estoque</a></button>
+			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
 			<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
 			<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
-			<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Estoque</a></button>
+			<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
 		</div>
 	</div>
 </body>

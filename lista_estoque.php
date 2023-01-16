@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lista de Estoque</title>
+  <title>Lista de Compras</title>
   <meta charset="utf-8">
   <link href="estilo_lista.css" rel="stylesheet">
+
 </head>
 <body>
   <?php
@@ -13,10 +14,10 @@
   include('funcoes/conecta.php');
 
   
-  $id = isset($_POST['id']) ? $_POST['id'] : '';
-  $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-  $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
-  $quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : '';
+  $id = isset($_GET['id']) ? $_GET['id'] : '';
+$nome = isset($_GET['nome']) ? $_GET['nome'] : '';
+$codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
+$quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
 
 
 
@@ -28,7 +29,7 @@
   
   ?>
   <div class="centro tabela-container">
-    <h1>Lista de Estoque</h1>
+    <h1>Lista de Compras</h1>
   </div>
   <div class="centro tabela-container" id="botoes">
 
@@ -36,13 +37,14 @@
    include 'botoes.php';
    ?>
 
+
  </div>
  <table class="tabela tabela-container" border="1">
   <?php
   if(isset($linhas)) {
     ?>
     <tr>
-      <th>Nome</th>
+      <th>Peça</th>
       <th>Código</th>
       <th>Quantidade</th>
       <th>Deletar</th>
@@ -64,7 +66,7 @@
       echo '<td>'.(!empty($linha['quantidade']) ? $linha['quantidade'] : '-').'</td>';
       echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
       echo '<td>
-      <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'">Editar.</a>
+      <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'"class="no-decoration">Editar.</a>
 
       </td>';
 
@@ -82,7 +84,9 @@
       window.location.href = 'delete_estoque.php?id='+id;
     }
   }
+
 </script>
+
 
 </body>
 </html>

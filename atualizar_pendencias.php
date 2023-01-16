@@ -17,31 +17,31 @@ if (isset($_POST['msg'])) {
 	<div class="container">
 		<div class="centro">			
 			<h1>Atualizar Pendências</h1>
-			<form action="atualiza_pendencias.php" method="post">
+			<form action="atualiza_pendencias.php">
 				<table border="8" class="centro">
 					<?php 
-					if (isset($_POST['id'])) {
-						$id = $_POST['id'];
+					if (isset($_GET['id'])) {
+						$id = $_GET['id'];
 					} else {
 						$id = '';
 					}
-					if (isset($_POST['nome_pendencias'])) {
-						$nome_pendencias = $_POST['nome_pendencias'];
+					if (isset($_GET['nome_pendencias'])) {
+						$nome_pendencias = $_GET['nome_pendencias'];
 					} else {
 						$nome_pendencias = '';
 					}
-					if (isset($_POST['codigo_pendencias'])) {
-						$codigo_pendencias = $_POST['codigo_pendencias'];
+					if (isset($_GET['codigo_pendencias'])) {
+						$codigo_pendencias = $_GET['codigo_pendencias'];
 					} else {
 						$codigo_pendencias = '';
 					}
-					if (isset($_POST['quantidade_pendencias'])) {
-						$quantidade_pendencias = $_POST['quantidade_pendencias'];
+					if (isset($_GET['quantidade_pendencias'])) {
+						$quantidade_pendencias = $_GET['quantidade_pendencias'];
 					} else {
 						$quantidade_pendencias = '';
 					}
-					if (isset($_POST['os_pendencias'])) {
-						$os_pendencias = $_POST['os_pendencias'];
+					if (isset($_GET['os_pendencias'])) {
+						$os_pendencias = $_GET['os_pendencias'];
 					} else {
 						$os_pendencias = '';
 					}
