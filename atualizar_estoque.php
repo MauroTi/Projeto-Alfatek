@@ -20,26 +20,27 @@ if (isset($_GET['msg'])) {
 			<form action="atualiza_estoque.php">
 				<table border="8" class="centro">
 					<?php 
-					if (isset($_POST['id'])) {
-    $id = $_POST['id'];
-} else {
-    $id = '';
-}
-if (isset($_POST['nome'])) {
-    $nome = $_POST['nome'];
-} else {
-    $nome = '';
-}
-if (isset($_POST['codigo'])) {
-    $codigo = $_POST['codigo'];
-} else {
-    $codigo = '';
-}
-if (isset($_POST['quantidade'])) {
-    $quantidade = $_POST['quantidade'];
-} else {
-    $quantidade = '';
-}
+					if (isset($_GET['id'])) {
+						$id = $_GET['id'];
+					} else {
+						$id = '';
+					}
+					if (isset($_GET['nome'])) {
+						$nome = $_GET['nome'];
+					} else {
+						$nome = '';
+					}
+					if (isset($_GET['codigo'])) {
+						$codigo = $_GET['codigo'];
+					} else {
+						$codigo = '';
+					}
+					if (isset($_GET['quantidade'])) {
+						$quantidade = $_GET['quantidade'];
+					} else {
+						$quantidade = '';
+					}
+
 
 
 					?>
@@ -66,8 +67,8 @@ if (isset($_POST['quantidade'])) {
 				</table>
 				<?php 
 
-	include 'botoes.php';
-?>
+				include 'botoes.php';
+				?>
 			</form>
 		</div>
 	</div>

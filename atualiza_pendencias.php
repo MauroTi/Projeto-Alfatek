@@ -1,26 +1,25 @@
 <?php 
 
-	include('funcoes/conecta.php');
-	
+include('funcoes/conecta.php');
 
 
-	$id = $_POST['id'];
-	$nome_pendencias = $_POST['nome_pendencias'];
-	$codigo_pendencias = $_POST['codigo_pendencias'];
-	$quantidade_pendencias = $_POST['quantidade_pendencias'];
-	$os_pendencias = $_POST['os_pendencias'];
-	
-
-	$query = "UPDATE pecas SET nome_pendencias = '".$nome_pendencias."', codigo_pendencias ='".$codigo_pendencias."', quantidade_pendencias ='".$quantidade_pendencias."',os_pendencias ='".$os_pendencias."' WHERE id = '".$id."'";
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$nome_pendencias = isset($_GET['nome_pendencias']) ? $_GET['nome_pendencias'] : '';
+$codigo_pendencias = isset($_GET['codigo_pendencias']) ? $_GET['codigo_pendencias'] : '';
+$quantidade_pendencias = isset($_GET['quantidade_pendencias']) ? $_GET['quantidade_pendencias'] : '';
+$os_pendencias = isset($_GET['os_pendencias']) ? $_GET['os_pendencias'] : '';
 
 
-	$resultado = mysqli_query(conecta(), $query);
-	
+$query = "UPDATE pecas SET nome_pendencias = '".$nome_pendencias."', codigo_pendencias ='".$codigo_pendencias."', quantidade_pendencias ='".$quantidade_pendencias."',os_pendencias ='".$os_pendencias."' WHERE id = '".$id."'";
 
 
-	if($resultado){
-		header('Location: lista_pendencias.php?msg=Cadastro atualizado!');
-	}
-	else {
-		echo 'Erro';
-	}
+$resultado = mysqli_query(conecta(), $query);
+
+
+
+if($resultado){
+	header('Location: lista_pendencias.php?msg=Cadastro atualizado!');
+}
+else {
+	echo 'Erro';
+}

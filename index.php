@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body>
-	<h1>Espera de peças</h1>
+	<h1>Cadastro de Pendências e Estoque</h1>
 	<div id="container">
 
 		<h2>Escolha uma Opção:</h2>

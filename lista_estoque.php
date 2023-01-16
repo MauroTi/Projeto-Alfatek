@@ -13,10 +13,10 @@
   include('funcoes/conecta.php');
 
   
-  $id = isset($_POST['id']) ? $_POST['id'] : '';
-  $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
-  $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
-  $quantidade = isset($_POST['quantidade']) ? $_POST['quantidade'] : '';
+  $id = isset($_GET['id']) ? $_GET['id'] : '';
+$nome = isset($_GET['nome']) ? $_GET['nome'] : '';
+$codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
+$quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
 
 
 
@@ -64,7 +64,7 @@
       echo '<td>'.(!empty($linha['quantidade']) ? $linha['quantidade'] : '-').'</td>';
       echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
       echo '<td>
-      <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'">Editar.</a>
+      <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'"class="no-decoration">Editar.</a>
 
       </td>';
 
