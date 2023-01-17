@@ -7,10 +7,10 @@
   <link href="estilo_lista.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="lista_estoque">
   <?php
 
-
+include ('funcoes/logo.php'); 
   include('funcoes/conecta.php');
 
   
@@ -86,7 +86,9 @@ $quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
   }
 
 </script>
-
+<?php include ('funcoes/changeButtonColor.php');
+changeButtonColor("lista_estoque.php");
+?>
 
 </body>
 </html>

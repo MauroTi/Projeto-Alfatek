@@ -14,6 +14,7 @@ if (isset($_POST['msg'])) {
 </head>
 
 <body>
+	<?php include ('funcoes/logo.php'); ?>
 	<div class="container">
 		<div class="centro">			
 			<h1>Atualizar Pendências</h1>

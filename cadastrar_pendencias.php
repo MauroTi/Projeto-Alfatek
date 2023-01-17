@@ -10,7 +10,8 @@ if (isset($_GET['msg'])) {
 	<title>Cadastro de Pendências</title>
 	<link href="estilo_cadastro.css" rel="stylesheet">
 </head>
-<body>
+<body class="cadastrar_pendencias">
+	<?php include ('funcoes/logo.php'); ?>
 	<div class="container">
 		<div class="centro">			
 			<h1>Cadastro de Pendências</h1>
@@ -61,6 +62,8 @@ $os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
 			</form>
 		</div>
 	</div>
-
+<?php include ('funcoes/changeButtonColor.php');
+changeButtonColor("cadastrar_pendencias.php");
+?>
 </body>
 </html>

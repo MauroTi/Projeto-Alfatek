@@ -14,6 +14,7 @@ if (isset($_GET['msg'])) {
 </head>
 
 <body>
+	<?php include ('funcoes/logo.php'); ?>
 	<div class="container">
 		<div class="centro">			
 			<h1>Atualizar Pedido de Peças</h1>

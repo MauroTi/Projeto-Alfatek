@@ -7,10 +7,10 @@
 	<link href="estilo_lista.css" rel="stylesheet">
 	
 </head>
-<body>
+<body class="lista_pendencias">
 	<?php
 
-
+	include ('funcoes/logo.php'); 
 	include('funcoes/conecta.php');
 
 
@@ -83,6 +83,8 @@
 			}
 		}
 	</script>
-
+	<?php include ('funcoes/changeButtonColor.php');
+	changeButtonColor("lista_pendencias.php");
+	?>
 </body>
 </html>

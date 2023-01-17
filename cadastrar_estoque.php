@@ -11,7 +11,8 @@ if (isset($_GET['msg'])) {
     <link href="estilo_cadastro.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="cadastrar_estoque">
+    <?php include ('funcoes/logo.php'); ?>
     <div class="container">
         <div class="centro">            
             <h1>Cadastro de Estoque</h1>
@@ -75,6 +76,8 @@ if (isset($_GET['msg'])) {
             </form>
         </div>
     </div>
-
+ <?php include ('funcoes/changeButtonColor.php');
+changeButtonColor("cadastrar_estoque.php");
+?>
 </body>
 </html>
