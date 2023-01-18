@@ -44,6 +44,11 @@ if (isset($_GET['msg'])) {
                     } else {
                         $os = '';
                     }
+                    if (isset($_POST['data_pecas'])) {
+                        $data_pecas = $_POST['data_pecas'];
+                    } else {
+                        $data_pecas = '';
+                    }
                     ?>
 
 

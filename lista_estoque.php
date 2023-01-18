@@ -18,10 +18,12 @@ include ('funcoes/logo.php');
 $nome = isset($_GET['nome']) ? $_GET['nome'] : '';
 $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
 $quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
+$data_pecas = isset($_GET['data_pecas']) ? $_GET['data_pecas'] : '';
 
 
 
-  $query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%'";
+
+  $query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND data_pecas LIKE '%$data_pecas%'";
 
   $resultado = mysqli_query(conecta(), $query);
 
@@ -47,6 +49,7 @@ $quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
       <th>Peça</th>
       <th>Código</th>
       <th>Quantidade</th>
+      <th>Data</th>
       <th>Deletar</th>
       <th>Atualizar</th>
 
@@ -64,6 +67,7 @@ $quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
       echo '<td>'.(!empty($linha['nome']) ? $linha['nome'] : '-').'</td>';
       echo '<td>'.(!empty($linha['codigo']) ? $linha['codigo'] : '-').'</td>';
       echo '<td>'.(!empty($linha['quantidade']) ? $linha['quantidade'] : '-').'</td>';
+      echo '<td>'.(!empty($linha['data_pecas']) ? $linha['data_pecas'] : '-').'</td>';
       echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
       echo '<td>
       <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'"class="no-decoration">Editar.</a>

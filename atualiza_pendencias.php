@@ -10,16 +10,13 @@ $quantidade_pendencias = isset($_GET['quantidade_pendencias']) ? $_GET['quantida
 $os_pendencias = isset($_GET['os_pendencias']) ? $_GET['os_pendencias'] : '';
 
 
+
 $query = "UPDATE pecas SET nome_pendencias = '".$nome_pendencias."', codigo_pendencias ='".$codigo_pendencias."', quantidade_pendencias ='".$quantidade_pendencias."',os_pendencias ='".$os_pendencias."' WHERE id = '".$id."'";
 
 
 $resultado = mysqli_query(conecta(), $query);
-
-
-
-if($resultado){
-	header('Location: lista_pendencias.php?msg=Cadastro atualizado!');
-}
-else {
-	echo 'Erro';
+if ($resultado == true) {
+    echo "<script>alert('Cadastro atualizado com sucesso!'); window.location.href='lista_pendencias.php';</script>";
+} else {
+    echo "Erro: " . mysqli_error(conecta());
 }

@@ -10,10 +10,9 @@ $query = "UPDATE pecas SET nome = '".$nome."', codigo ='".$codigo."', quantidade
 
 $resultado = mysqli_query(conecta(), $query);
 
-if($resultado){
-    header('Location: lista_estoque.php?msg=Cadastro atualizado!');
-}
-else {
-    echo 'Erro';
+if ($resultado == true) {
+    echo "<script>alert('Cadastro atualizado com sucesso!'); window.location.href='lista_estoque.php';</script>";
+} else {
+    echo "Erro: " . mysqli_error(conecta());
 }
 ?>
