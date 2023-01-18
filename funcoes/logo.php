@@ -35,6 +35,6 @@
     </style>
   </head>
   <body>
-    <img id="logo" src="imagens/logo.png" alt="Logo">
+  <a href="http://www.alfatek.com.br"><img id="logo" src="imagens/logo.png" alt="Logo"></a>
   </body>
 </html>
