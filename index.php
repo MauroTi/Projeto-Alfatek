@@ -46,8 +46,8 @@
 	<h1>Cadastro de Pendências e Peças</h1>
 	<div id="container">
 		<h2>Escolha uma Opção:</h2>
-		<label for="datetime">Data e Hora Atual:</label>
-<input type="text" name="datetime" id="datetime" value="" readonly>
+		<label for="datetime" style="display: none;"></label>
+<input type="text" name="datetime" id="datetime" value="" readonly style="border: none;" >
 
 <script>
   function updateDateTime() {
