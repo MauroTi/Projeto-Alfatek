@@ -33,8 +33,25 @@
   transform: scale(1.4);
 }
     </style>
+    <link href="logo.css" rel="stylesheet">
   </head>
   <body>
-  <a href="http://www.alfatek.com.br"><img id="logo" src="imagens/logo.png" alt="Logo"></a>
-  </body>
+  <div id="header">
+    <a href="http://www.alfatek.com.br"><img id="logo" src="imagens/logo.png" alt="Logo"></a>
+    <label for="datetime" style="display: none;"></label>
+    <input type="text" name="datetime" id="datetime" value="" readonly style="border: none;" >
+  </div>
+  <script>
+   function updateDateTime() {
+  var date = new Date();
+  var options = {weekday: 'short', year: 'numeric', month: 'numeric', day: 'numeric'};
+  var dateString = date.toLocaleDateString('pt-BR', options);
+  var dateTimeField = document.getElementById("datetime");
+  dateTimeField.value = dateString;
+}
+setInterval(updateDateTime, 1000);
+
+  </script>
+</body>
+
 </html>

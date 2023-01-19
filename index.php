@@ -46,17 +46,6 @@
 	<h1>Cadastro de Pendências e Peças</h1>
 	<div id="container">
 		<h2>Escolha uma Opção:</h2>
-		<label for="datetime" style="display: none;"></label>
-<input type="text" name="datetime" id="datetime" value="" readonly style="border: none;" >
-
-<script>
-  function updateDateTime() {
-    var dateTimeField = document.getElementById("datetime");
-    dateTimeField.value = new Date().toLocaleString();
-  }
-  setInterval(updateDateTime, 1000);
-</script>
-
 		<div id="indice">
 			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
 			<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
