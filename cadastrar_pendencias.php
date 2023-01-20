@@ -20,11 +20,11 @@ if (isset($_GET['msg'])) {
 					<?php 
 					$id = $nome_pendencias = $codigo_pendencias = $quantidade_pendencias = $os_pendencias = "";
 
-$id = isset($_POST['id']) ? $_POST['id'] : '';
-$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
-$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
-$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
-$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
+					$id = isset($_POST['id']) ? $_POST['id'] : '';
+					$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
+					$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
+					$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
+					$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
 
 					?>
 
@@ -62,8 +62,8 @@ $os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
 			</form>
 		</div>
 	</div>
-<?php include ('funcoes/changeButtonColor.php');
-changeButtonColor("cadastrar_pendencias.php");
-?>
+	<?php include ('funcoes/changeButtonColor.php');
+	changeButtonColor("cadastrar_pendencias.php");
+	?>
 </body>
 </html>
