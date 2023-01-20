@@ -17,3 +17,6 @@ if ($resultado == true) {
     echo "Erro: " . mysqli_error(conecta());
 }
 ?>
+<script>
+ 
+</script>
