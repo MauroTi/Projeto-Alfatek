@@ -14,7 +14,7 @@
 </head>
 <body>
 	<?php
-		include('sitepartes/cabecalho.php');
+	
 	?>
 	<form action="login.php" method="post">
 		<table class="tabela login" border="1">

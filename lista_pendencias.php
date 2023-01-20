@@ -88,6 +88,7 @@
 	</script>
 	<?php include ('funcoes/changeButtonColor.php');
 	changeButtonColor("lista_pendencias.php");
+	mysqli_close(conecta());
 	?>
 </body>
 </html>
