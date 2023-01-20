@@ -10,20 +10,20 @@
 <body class="lista_estoque">
   <?php
 
-include ('funcoes/logo.php'); 
+  include ('funcoes/logo.php'); 
   include('funcoes/conecta.php');
 
   
   $id = isset($_GET['id']) ? $_GET['id'] : '';
-$nome = isset($_GET['nome']) ? $_GET['nome'] : '';
-$codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
-$quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
-$data_pecas = isset($_GET['data_pecas']) ? $_GET['data_pecas'] : '';
+  $nome = isset($_GET['nome']) ? $_GET['nome'] : '';
+  $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
+  $quantidade = isset($_GET['quantidade']) ? $_GET['quantidade'] : '';
+  $data = isset($_GET['data']) ? $_GET['data'] : '';
 
 
 
 
-  $query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND data_pecas LIKE '%$data_pecas%'";
+  $query = "SELECT * FROM pecas WHERE id LIKE '%$id%' AND nome LIKE '%$nome%' AND codigo LIKE '%$codigo%' AND quantidade LIKE '%$quantidade%' AND data LIKE '%$data%'";
 
   $resultado = mysqli_query(conecta(), $query);
 
@@ -58,16 +58,16 @@ $data_pecas = isset($_GET['data_pecas']) ? $_GET['data_pecas'] : '';
     foreach($linhas as $linha) {
       if(empty($linha['nome'] && $linha['codigo'] && $linha['quantidade'])){
 
-    continue;
-  }
+        continue;
+      }
 
-  
+
 
       echo '<tr>';
       echo '<td>'.(!empty($linha['nome']) ? $linha['nome'] : '-').'</td>';
       echo '<td>'.(!empty($linha['codigo']) ? $linha['codigo'] : '-').'</td>';
       echo '<td>'.(!empty($linha['quantidade']) ? $linha['quantidade'] : '-').'</td>';
-      echo '<td>'.(!empty($linha['data_pecas']) ? $linha['data_pecas'] : '-').'</td>';
+      echo '<td>'.(!empty($linha['data']) ? $linha['data'] : '-').'</td>';
       echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar Registro</button></td>';
       echo '<td>
       <a href="atualizar_estoque.php?id='.$linha['id'].'& nome='.$linha['nome'].'& codigo='.$linha['codigo'].'& quantidade='.$linha['quantidade'].'"class="no-decoration">Editar.</a>
