@@ -1,12 +1,12 @@
 <?php
 	session_start();
-	if(isset($_POST['user']) && isset($_POST['senha'])) {
+	if(isset($_POST['usuario']) && isset($_POST['senha'])) {
 		include('funcoes/conecta.php');
 
-		$user = $_POST['user'];
+		$usuario = $_POST['usuario'];
 		$senha = $_POST['senha'];
 
-		$query = "SELECT * FROM usuarios WHERE username = '".$user."'";
+		$query = "SELECT * FROM pecas WHERE usuario = '".$usuario."'";
 
 		$resultado = mysqli_query(conecta(), $query);
 
@@ -14,7 +14,7 @@
 
 		if($usuario) {
 			if($usuario['senha'] == $senha) {
-				$_SESSION['login'] = $usuario['nome'];
+				$_SESSION['login'] = $usuario['usuario'];
 				header('Location: index.php?msg=Logado com sucesso!');
 			}
 			else {

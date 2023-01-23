@@ -19,7 +19,7 @@
 	<form action="login.php" method="post">
 		<table class="tabela login" border="1">
 				<td>Usuário:</td>
-				<td><input type="text" name="user"></td>
+				<td><input type="text" name="usuario"></td>
 			</tr>
 			<tr>
 				<td>Senha:</td>

@@ -42,7 +42,12 @@
 	</style>
 </head>
 <body>
-	<?php include ('funcoes/logo.php'); ?>
+	<?php 
+	include ('funcoes/verificaLogin.php');
+	include ('funcoes/logo.php'); 
+	include ('funcoes/login.php');
+	
+	?>
 	<h1>Cadastro de Pendências e Peças</h1>
 	<div id="container">
 		<h2>Escolha uma Opção:</h2>
