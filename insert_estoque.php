@@ -13,7 +13,7 @@ $resultado = mysqli_query(conecta(), $query);
 
 
 
-if ($resultado == true) {
+if ($resultado == true && $resultado != "") {
     echo "<script>alert('Cadastro efetuado com sucesso!'); window.location.href='lista_estoque.php';</script>";
 } else {
     echo "Erro: " . mysqli_error(conecta());

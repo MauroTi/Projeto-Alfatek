@@ -42,10 +42,16 @@
 	</style>
 </head>
 <body>
-	<?php 
-	include ('funcoes/verificaLogin.php');
+	
+	<?php
+   /* session_start();
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        header("location: entrar.php");
+    }*/
+
+
 	include ('funcoes/logo.php'); 
-	include ('funcoes/login.php');
+	
 	
 	?>
 	<h1>Cadastro de Pendências e Peças</h1>

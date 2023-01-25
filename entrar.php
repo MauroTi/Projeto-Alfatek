@@ -30,6 +30,11 @@
 					<button style="width: 100%;">Logar</button>
 				</td>
 			</tr>
+			<tr>
+				<td colspan="2">
+					<button style="width: 100%;">Cadastrar</button>
+				</td>
+			</tr>
 		</table>
 	</form>
 </body>
