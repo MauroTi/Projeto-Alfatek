@@ -9,7 +9,7 @@ function auth_user($username, $password) {
     if ($result->num_rows > 0) {
         // Iniciar sessão e armazenar o nome do usuário logado
         $row = $result->fetch_assoc();
-        $_SESSION['user'] = $row['usuario'];
+        $_SESSION['username'] = $row['usuario'];
         mysqli_close($link);
         return true;
     } else {

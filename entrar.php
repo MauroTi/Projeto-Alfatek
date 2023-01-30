@@ -12,12 +12,23 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+<style>
+
+#form_login
+{
+	margin: auto;
+	display: flex;
+		
+}
+</style>
+
 <body>
 	<?php
 	
 	?>
-	<form action="login.php" method="post">
-		<table class="tabela login" border="1">
+	<div id="container_login">
+	<form id="form_login" action="login.php" method="post">
+		<table class="tabela_login" border="1">
 				<td>Usuário:</td>
 				<td><input type="text" name="usuario"></td>
 			</tr>
@@ -37,5 +48,9 @@
 			</tr>
 		</table>
 	</form>
+	<?php if (!empty($errorMessage)) { ?>
+            <p><?php echo $errorMessage; ?></p>
+        <?php } ?>
+	</div>
 </body>
 </html>
