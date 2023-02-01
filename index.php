@@ -44,11 +44,10 @@
 <body>
 	
 	<?php
-    session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+   /*session_start();
+    if (isset($_SESSION['logged_in']) == false) {
         header("location: entrar.php");
-    }
-
+    }*/
 
 	include ('funcoes/logo.php'); 
 	
