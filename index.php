@@ -7,7 +7,7 @@
 	<style type="text/css">
 		button
 		{
-			margin: 20px 45px;
+			margin: 10px 45px;
 			padding: 8px;
 			font-size: 20px;
 
@@ -30,13 +30,16 @@
 			text-decoration: none;
 
 		}
-		#indice
-		{
-			width: 50%;
-			margin: 10px auto;
-			text-align: center;
-			
-		}
+		#indice {
+		display: flex;
+		justify-content: center;
+	}
+	.coluna {
+		flex-direction: column;
+		width: 45%;
+		text-align: center;
+	}
+
 
 		
 	</style>
@@ -57,12 +60,20 @@
 	<div id="container">
 		<h2>Escolha uma Opção:</h2>
 		<div id="indice">
-			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
-			<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
-			<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
-			<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
-			<button><a href="sair.php" class="button"  style="color: #000">*****Sair*****</a></button>
-		</div>
+	<div class="coluna">
+		<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
+		<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
+	</div>
+	<div class="coluna">
+		<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
+		<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
+	</div>
+	
+	
+</div>
+<div>
+  <button><a href="sair.php" class="button" id="sair" style="color: #000">*****Sair*****</a></button>
+</div>
 	</div>
 </body>
 </html>
