@@ -61,6 +61,7 @@
 			<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
 			<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
 			<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
+			<button><a href="sair.php" class="button"  style="color: #000">*****Sair*****</a></button>
 		</div>
 	</div>
 </body>
