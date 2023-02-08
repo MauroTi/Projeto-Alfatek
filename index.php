@@ -22,7 +22,7 @@
 		}
 		h1, h2
 		{
-			margin-top: 20px;
+			margin-top: 60px;
 			text-align: center;
 		}
 		a.button:link
@@ -31,14 +31,19 @@
 
 		}
 		#indice {
-		display: flex;
-		justify-content: center;
-	}
-	.coluna {
-		flex-direction: column;
-		width: 45%;
-		text-align: center;
-	}
+			display: flex;
+			justify-content: center;
+		}
+		.coluna {
+			flex-direction: column;
+			width: 45%;
+			text-align: center;
+		}
+		#sair{
+
+			display: flex;
+			justify-content: center;
+		}
 
 
 		
@@ -52,28 +57,29 @@
         header("location: entrar.php");
     }*/
 
-	include ('funcoes/logo.php'); 
-	
-	
-	?>
-	<h1>Cadastro de Pendências e Peças</h1>
-	<div id="container">
-		<h2>Escolha uma Opção:</h2>
-		<div id="indice">
-	<div class="coluna">
-		<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
-		<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
-	</div>
-	<div class="coluna">
-		<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
-		<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
-	</div>
-	
-	
-</div>
-<div>
-  <button><a href="sair.php" class="button" id="sair" style="color: #000">*****Sair*****</a></button>
-</div>
-	</div>
+    include ('funcoes/logo.php'); 
+
+
+    ?>
+    <h1>Cadastro de Pendências e Peças</h1>
+    <div id="container">
+    	<h2>Escolha uma Opção:</h2>
+    	<div id="indice">
+    		<div class="coluna">
+    			<button><a href="cadastrar_estoque.php" class="button" style="color: #000">Cadastrar Peças</a></button>
+    			<button><a href="lista_estoque.php"  class="button"  style="color: #000">Lista de Peças</a></button>
+    		</div>
+    		<div class="coluna">
+    			<button><a href="cadastrar_pendencias.php"  class="button"  style="color: #000">Cadastrar Pendências</a></button>
+    			<button><a href="lista_pendencias.php"  class="button"  style="color: #000">Lista de Pendências</a></button>
+    		</div>
+
+
+    	</div>
+    	<!-- <div id="sair">    		
+    		<button><a href="entrar.php" class="button" id="entrar" style="color: #000">Entrar</a></button>
+    		<button><a href="sair.php" class="button" id="sair" style="color: #000">Sair</a></button>
+    	</div> -->
+    </div>
 </body>
 </html>
