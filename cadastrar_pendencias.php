@@ -45,8 +45,7 @@ if (isset($_GET['msg'])) {
 						<th>Ordem de Serviço</th>
 						<td><input type="text" name="os_pendencias" maxlength="6" value="<?php echo htmlspecialchars($os_pendencias); ?>"></td>
 					</tr>
-
-
+					
 					<tr>
 						<td  colspan="2">
 							<button>Cadastrar</button>
