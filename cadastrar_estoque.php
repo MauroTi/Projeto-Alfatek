@@ -2,6 +2,7 @@
 if (isset($_GET['msg'])) {
     echo '<h2>'. $_GET['msg'] . '</h2>';
 }
+session_start();
 ?>
 <!DOCTYPE html>
 <html>

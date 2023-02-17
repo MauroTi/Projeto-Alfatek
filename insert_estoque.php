@@ -5,14 +5,14 @@ $id = mysqli_real_escape_string(conecta(), $_POST['id']);
 if (!empty($_POST['nome'])) {
     $nome = mysqli_real_escape_string(conecta(), $_POST['nome']);
 } else {
-    echo "<script>alert('Todos os campos devem ser preenchidos'); window.location.href = 'cadastrar.php';</script>";
+    echo "<script>alert('Todos os campos devem ser preenchidos'); window.location.href = 'cadastrar_estoque.php';</script>";
     exit;
 }
 
 if (!empty($_POST['codigo'])) {
     $codigo = mysqli_real_escape_string(conecta(), $_POST['codigo']);
 } else {
-    echo "<script>alert('Todos os campos devem ser preenchidos'); window.location.href = 'cadastrar.php';</script>";
+    echo "<script>alert('Todos os campos devem ser preenchidos'); window.location.href = 'cadastrar_estoque.php';</script>";
     exit;
 }
 

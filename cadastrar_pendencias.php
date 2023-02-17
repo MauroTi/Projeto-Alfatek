@@ -20,11 +20,14 @@ if (isset($_GET['msg'])) {
 					<?php 
 					$id = $nome_pendencias = $codigo_pendencias = $quantidade_pendencias = $os_pendencias = "";
 
-					$id = isset($_POST['id']) ? $_POST['id'] : '';
-					$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
-					$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
-					$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
-					$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
+					// Define as variáveis somente se o método de requisição for POST
+					if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+						$id = isset($_POST['id']) ? $_POST['id'] : '';
+						$nome_pendencias = isset($_POST['nome_pendencias']) ? $_POST['nome_pendencias'] : '';
+						$codigo_pendencias = isset($_POST['codigo_pendencias']) ? $_POST['codigo_pendencias'] : '';
+						$quantidade_pendencias = isset($_POST['quantidade_pendencias']) ? $_POST['quantidade_pendencias'] : '';
+						$os_pendencias = isset($_POST['os_pendencias']) ? $_POST['os_pendencias'] : '';
+					}
 
 					?>
 
