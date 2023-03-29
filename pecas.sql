@@ -3,8 +3,6 @@ CREATE DATABASE pecas;
 USE pecas;
 
 CREATE TABLE pecas (
-	
-
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(255) NOT NULL,
 	codigo VARCHAR(255) NOT NULL,
@@ -19,12 +17,12 @@ CREATE TABLE pecas (
 	observacoes_pendencias VARCHAR(255),
 	suprimentos VARCHAR(255),
 	usuario VARCHAR(255) NOT NULL,
-	senha VARCHAR(255) NOT NULL
-	user varchar(50) 
-	last_modified timestamp 
-	action varchar(50) 
-	user_pendencias varchar(50) 
-	last_modified_pendencias timestamp 
-	action_pendencias varchar(50)
+	senha VARCHAR(255) NOT NULL,
+	user varchar(50),
+	last_modified timestamp,
+	action varchar(50),
+	user_pendencias varchar(50),
+	last_modified_pendencias timestamp,
+	action_pendencias varchar(50),
+	observacoes_estoque varchar(255)
 );
-
