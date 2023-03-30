@@ -47,3 +47,10 @@ h1{
 .no-decoration{
 text-decoration: none;
 }
+.botoes_observacoes
+{
+  width: auto;
+  height: 20px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+}

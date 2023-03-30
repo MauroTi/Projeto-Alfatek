@@ -60,16 +60,18 @@
         echo '<td><button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Apagar</button></td>';
         echo '<td><a href="atualizar_estoque.php?id='.$linha['id'].'&nome='.$linha['nome'].'&codigo='.$linha['codigo'].'&quantidade='.$linha['quantidade'].'" class="no-decoration">Editar</a></td>';
         echo '<td><div class="observacoes-container">';
-        echo '<div class="observacoes-text" id="observacoes_'.$linha['id'].'">'.(!empty($linha['observacoes']) ? $linha['observacoes'] : '-').'</div>';
-        echo '<textarea class="observacoes-input" id="observacoes_input_'.$linha['id'].'" style="border: 1px solid #ccc; padding: 5px; width: 300px; height: 100px;">'.(!empty($linha['observacoes']) ? $linha['observacoes'] : '').'</textarea>';
-        echo '<button class="salvar" type="button" onclick="salvarObservacoes('.$linha['id'].')">Salvar</button>';
-        echo '<button class="editar" type="button" onclick="editarObservacoes('.$linha['id'].')">Editar</button>';
-        echo '<button class="excluir" type="button" onclick="excluir('.$linha['id'].');">Excluir</button>';
-        echo '</div></td></tr>';
-
-
-
-
+        echo '<div class="observacoes-text" id="observacoes_'.$linha['id'].'">'.(!empty($linha['observacoes_estoque']) ? $linha['observacoes_estoque'] : '-').'</div>';
+        echo '<textarea class="observacoes-input" id="observacoes_input_'.$linha['id'].'" style="border: 1px solid #ccc; padding: 5px; width: 300px; height: 30px;">'.(!empty($linha['observacoes_estoque']) ? $linha['observacoes_estoque'] : '').'</textarea>';
+        ?>
+        <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+          <?php
+          echo '<button class="botoes_observacoes" type="button" onclick="salvarObservacoes('.$linha['id'].')">Salvar</button>';
+          echo '<button class="botoes_observacoes" type="button" onclick="editarObservacoes('.$linha['id'].')">Editar</button>';
+          echo '<button class="botoes_observacoes" type="button" onclick="excluir('.$linha['id'].');">Excluir</button>';
+          echo '</div></td></tr>';
+          ?>
+        </div>
+        <?php
       }
     }
     ?>
